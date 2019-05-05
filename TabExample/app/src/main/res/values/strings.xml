@@ -1,0 +1,8 @@
+<resources>
+	<string name="app_name">TabExample</string>
+	<string name="main.tabitem.tab1">Tab 1</string>
+	<string name="main.tabitem.tab2">Tab 2</string>
+
+	<string name="tab1.textview.hello">Hallo Tab 1</string>
+	<string name="tab2.textview.hello">Hallo Tab 2</string>
+</resources>

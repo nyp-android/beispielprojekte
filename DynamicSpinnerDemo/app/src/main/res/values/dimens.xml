@@ -1,0 +1,13 @@
+<resources>
+	<dimen name="activity_horizontal_margin">16dp</dimen>
+	<dimen name="activity_vertical_margin">16dp</dimen>
+
+	<dimen name="spacing_spinner_image_vertical">3dp</dimen>
+	<dimen name="spacing_spinner_image_left">6dp</dimen>
+	<dimen name="spacing_spinner_image_left_small">3dp</dimen>
+	<dimen name="spacing_spinner_image_right">10dp</dimen>
+
+	<dimen name="height_spinner_item_image">50dp</dimen>
+	<dimen name="height_spinner_item_image_imageview">45dp</dimen>
+	<dimen name="width_spinner_item_image_imageview">45dp</dimen>
+</resources>

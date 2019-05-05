@@ -1,0 +1,4 @@
+<resources>
+	<string name="app_name">JUnitDemo</string>
+	<string name="errors.rest.lernenden.400">Mindestens eine der gemachten Angaben ist fehlerhaft oder es wurden mehr als 2 Fotos zum Upload angegeben.</string>
+</resources>

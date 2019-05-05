@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	tools:context="ch.nyp.constraintlayoutexample.MainActivity"
+	>
+
+	<TextView
+		android:id="@+id/textview_main_intro"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="@dimen/margin_large"
+		android:paddingLeft="@dimen/padding_medium"
+		android:paddingRight="@dimen/padding_medium"
+		android:text="@string/main.textview.intro"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintLeft_toLeftOf="parent"
+		app:layout_constraintRight_toRightOf="parent"
+		app:layout_constraintTop_toTopOf="parent"
+		app:layout_constraintVertical_bias="0.008"
+		/>
+
+	<TextView
+		android:id="@+id/textview_main_firstname"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="@dimen/margin_xlarge"
+		android:paddingLeft="@dimen/padding_medium"
+		android:paddingRight="@dimen/padding_medium"
+		android:text="@string/main.textview.firstname"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/textview_main_intro"
+		/>
+
+	<EditText
+		android:id="@+id/edittext_main_firstname"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:ems="10"
+		android:inputType="textPersonName"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/textview_main_firstname"
+		/>
+
+	<TextView
+		android:id="@+id/textview_main_lastname"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="@dimen/margin_xlarge"
+		android:paddingLeft="@dimen/padding_medium"
+		android:paddingRight="@dimen/padding_medium"
+		android:text="@string/main.textview.lastname"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/edittext_main_firstname"
+		/>
+
+	<EditText
+		android:id="@+id/edittext_main_lastname"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:layout_marginLeft="@dimen/margin_medium"
+		android:layout_marginStart="@dimen/margin_medium"
+		android:layout_marginTop="@dimen/margin_large"
+		android:ems="10"
+		android:inputType="textPersonName"
+		app:layout_constraintEnd_toEndOf="@+id/edittext_main_firstname"
+		app:layout_constraintStart_toEndOf="@+id/textview_main_lastname"
+		app:layout_constraintTop_toBottomOf="@+id/edittext_main_firstname"
+		/>
+
+	<Button
+		android:id="@+id/button_main_button1"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="@dimen/margin_xxlarge"
+		android:text="@string/main.button.button1"
+		app:layout_constraintEnd_toStartOf="@+id/guideline_main_buttons"
+		app:layout_constraintStart_toStartOf="@+id/textview_main_lastname"
+		app:layout_constraintTop_toBottomOf="@+id/edittext_main_lastname"
+		/>
+
+	<Button
+		android:id="@+id/button_main_button2"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="@dimen/margin_xxlarge"
+		android:text="@string/main.button.button2"
+		app:layout_constraintEnd_toEndOf="@+id/edittext_main_lastname"
+		app:layout_constraintStart_toStartOf="@+id/guideline_main_buttons"
+		app:layout_constraintTop_toBottomOf="@+id/edittext_main_lastname"
+		/>
+
+	<android.support.constraint.Guideline
+		android:id="@+id/guideline_main_buttons"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:orientation="vertical"
+		app:layout_constraintGuide_percent="0.5"
+		/>
+
+</android.support.constraint.ConstraintLayout>

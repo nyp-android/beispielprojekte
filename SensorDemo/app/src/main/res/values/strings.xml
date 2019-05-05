@@ -1,0 +1,5 @@
+<resources>
+	<string name="app_name">SensorDemo</string>
+	<string name="main_textview_sensors">Sensoren dieses Geräts:</string>
+	<string name="main_button_show_air_pressure">Show Air Pressure</string>
+</resources>

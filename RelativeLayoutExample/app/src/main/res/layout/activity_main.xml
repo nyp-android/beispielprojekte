@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent">
+
+	<TextView
+		android:id="@+id/textview_main_intro"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="@dimen/margin_large"
+		android:paddingLeft="@dimen/padding_medium"
+		android:paddingRight="@dimen/padding_medium"
+		android:text="@string/main.textview.intro"
+		/>
+
+	<TextView
+		android:id="@+id/textview_main_firstname"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="@dimen/margin_xlarge"
+		android:paddingLeft="@dimen/padding_medium"
+		android:paddingRight="@dimen/padding_medium"
+		android:text="@string/main.textview.firstname"
+		android:layout_below="@id/textview_main_intro"/>
+
+	<EditText
+		android:id="@+id/edittext_main_firstname"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:ems="10"
+		android:inputType="textPersonName"
+		android:layout_below="@id/textview_main_firstname"/>
+
+
+	<TextView
+		android:id="@+id/textview_main_lastname"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_above="@+id/linearLayout"
+		android:layout_alignParentLeft="true"
+		android:layout_alignParentStart="true"
+		android:layout_alignTop="@+id/edittext_main_lastname"
+		android:paddingLeft="@dimen/padding_medium"
+		android:paddingRight="@dimen/padding_medium"
+		android:text="@string/main.textview.lastname"
+		/>
+
+	<EditText
+		android:id="@+id/edittext_main_lastname"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginLeft="@dimen/margin_medium"
+		android:layout_marginStart="@dimen/margin_medium"
+		android:layout_marginTop="@dimen/margin_large"
+		android:ems="10"
+		android:inputType="textPersonName"
+		android:layout_below="@id/edittext_main_firstname"
+		android:layout_toRightOf="@id/textview_main_lastname"
+		android:layout_toEndOf="@id/textview_main_lastname"
+		/>
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal"
+		android:layout_marginTop="@dimen/margin_xxlarge"
+		android:layout_below="@id/edittext_main_lastname"
+		android:id="@+id/linearLayout"
+		>
+
+		<Button
+			android:id="@+id/button_main_button1"
+			android:layout_width="0dp"
+			android:layout_weight="1"
+			android:layout_height="wrap_content"
+			android:text="@string/main.button.button1"
+			/>
+
+		<Button
+			android:id="@+id/button_main_button2"
+			android:layout_width="0dp"
+			android:layout_weight="1"
+			android:layout_height="wrap_content"
+			android:text="@string/main.button.button2"
+			/>
+
+	</LinearLayout>
+
+</RelativeLayout>

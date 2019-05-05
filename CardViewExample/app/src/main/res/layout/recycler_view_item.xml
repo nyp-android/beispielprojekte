@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Card Container: Dieses XML definiert den Aufbau eines Eintrages in der CardView -->
+<android.support.constraint.ConstraintLayout
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_margin="@dimen/card_margin"
+	android:background="@color/colorCard"
+	>
+
+		<TextView
+			android:id="@+id/recycler.textview.cardtext"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toTopOf="parent"
+			tools:text="Card Text"
+			/>
+
+		<ImageView
+			android:id="@+id/recycler.imageview.image"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toBottomOf="@+id/recycler.textview.cardtext"
+			app:layout_constraintVertical_bias="1.0"
+			android:src="@mipmap/ic_launcher"
+			/>
+
+	</android.support.constraint.ConstraintLayout>
+

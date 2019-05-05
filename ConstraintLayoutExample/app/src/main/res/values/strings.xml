@@ -1,0 +1,8 @@
+<resources>
+	<string name="app_name">ConstraintLayoutExample</string>
+	<string name="main.textview.intro">Herzlich Willkommen. Bitte fülle das untenstehende Formular aus.</string>
+	<string name="main.textview.lastname">Nachname:</string>
+	<string name="main.textview.firstname">Vorname:</string>
+	<string name="main.button.button1">Button 1</string>
+	<string name="main.button.button2">Button 2</string>
+</resources>

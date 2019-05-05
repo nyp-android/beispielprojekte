@@ -1,0 +1,5 @@
+<resources>
+	<string name="app_name">ActionBarIconsExample</string>
+	<string name="activity2">Activity 2</string>
+	<string name="activity3">Activity 3</string>
+</resources>

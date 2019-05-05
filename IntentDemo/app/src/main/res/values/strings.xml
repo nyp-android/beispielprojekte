@@ -1,0 +1,10 @@
+<resources>
+	<string name="app_name">IntentDemo</string>
+
+	<string name="mainActivity.title">MainActivity</string>
+	<string name="mainActivity.textView.introText">Text, welcher im Activity 2 angezeigt
+		werden soll:</string>
+	<string name="mainActivity.button.openActivity2">Activity 2 öffnen</string>
+
+	<string name="activity2.title">Activity 2</string>
+</resources>

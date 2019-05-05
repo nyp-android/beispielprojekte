@@ -1,0 +1,5 @@
+<resources>
+	<string name="app_name">ImageGalleryExample</string>
+	<string name="main_error_openimage">Ausgewähltes Bild konnte nicht geöffnet werden.</string>
+	<string name="main_error_copyimage">Ausgewähltes Bild konnte nicht kopiert werden.</string>
+</resources>

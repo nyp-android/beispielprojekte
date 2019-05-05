@@ -1,0 +1,5 @@
+<resources>
+	<string name="app_name">IntentActionDemo</string>
+	<string name="detail.textview.activityopened">Activity opened </string>
+	<string name="main.button.openactivity">Open new Activity</string>
+</resources>

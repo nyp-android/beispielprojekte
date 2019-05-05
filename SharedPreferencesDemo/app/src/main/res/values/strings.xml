@@ -1,0 +1,5 @@
+<resources>
+	<string name="app_name">SharedPreferencesDemo</string>
+	<string name="read_prefs">Shared Preferences lesen</string>
+	<string name="write_prefs">Shared Preferences schreiben</string>
+</resources>
