@@ -1,27 +1,9 @@
-<!--
-  Copyright (C) 2018 The Android Open Source Project
-
-  Licensed under the Apache License, Version 2.0 (the "License");
-  you may not use this file except in compliance with the License.
-  You may obtain a copy of the License at
-
-       http://www.apache.org/licenses/LICENSE-2.0
-
-  Unless required by applicable law or agreed to in writing, software
-  distributed under the License is distributed on an "AS IS" BASIS,
-  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-  See the License for the specific language governing permissions and
-  limitations under the License.
-  -->
-
 <resources>
-    <string name="app_name">BasicSample</string>
-    <string name="likes">Likes</string>
-    <string name="textview">TextView</string>
-    <string name="profile_name">NAME</string>
-    <string name="profile_lastname">LAST NAME</string>
-    <string name="last_name_label">Last name</string>
-    <string name="name_label">Name</string>
-    <string name="profile_avatar_cd">Profile\'s avatar</string>
-    <string name="like">Like</string>
+    <string name="app_name">movie_app</string>
+    <string name="title_activity_login">Simple Login UI</string>
+    <string name="don_t_have_an_account">Don\'t have an account?</string>
+    <string name="create_an_account_to_identify">Create an account to identify</string>
+    <string name="firstname">Enter your first name</string>
+    <string name="lastname">Enter your last name</string>
+    <string name="password">Enter your password</string>
 </resources>
