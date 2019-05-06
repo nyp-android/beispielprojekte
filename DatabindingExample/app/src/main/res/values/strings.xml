@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">movie_app</string>
+    <string name="title_activity_login">Simple Login UI</string>
+    <string name="don_t_have_an_account">Don\'t have an account?</string>
+    <string name="create_an_account_to_identify">Create an account to identify</string>
+    <string name="firstname">Enter your first name</string>
+    <string name="lastname">Enter your last name</string>
+    <string name="password">Enter your password</string>
+</resources>
