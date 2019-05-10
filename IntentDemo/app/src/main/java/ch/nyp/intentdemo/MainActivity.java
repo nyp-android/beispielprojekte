@@ -1,12 +1,11 @@
 package ch.nyp.intentdemo;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 
 /**
  * Einstiegsactivity.
@@ -40,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
 			intent.putExtras(bundle);
 			startActivity(intent);
 		}
+		
 	};
 
 	/**
@@ -62,4 +62,5 @@ public class MainActivity extends AppCompatActivity {
 		mTextToTransferEditText = findViewById(R.id
 				.editText_main_textToTransfer);
 	}
+	
 }
