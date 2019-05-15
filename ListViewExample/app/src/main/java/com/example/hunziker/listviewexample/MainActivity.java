@@ -2,6 +2,9 @@ package com.example.hunziker.listviewexample;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -36,5 +39,13 @@ public class MainActivity extends AppCompatActivity {
     
     ListView listView = findViewById(R.id.listview_main_demoList);
     listView.setAdapter(new ItemAdapter(this, itemList));
+    listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+      @Override
+      public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        // Log ItemCLickPosition to LogCat
+        Log.e("OnItemListView", Integer.toString(position));
+        
+      }
+    });
   }
 }
