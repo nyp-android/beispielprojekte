@@ -7,7 +7,7 @@ import butterknife.ButterKnife;
 
 
 public class MainActivity extends Activity implements ResultsFragment.OnFragmentInteractionListener,
-    MainLaunchFragment.OnFragmentInteractionListener{
+    MainLaunchFragment.OnFragmentInteractionListener {
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -18,9 +18,6 @@ public class MainActivity extends Activity implements ResultsFragment.OnFragment
     FragmentUtils.loadFragment(this, MainLaunchFragment.newInstance());
 
   }
-
-
-
 
 
   @Override

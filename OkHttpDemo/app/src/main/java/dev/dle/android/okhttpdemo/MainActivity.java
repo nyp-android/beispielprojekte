@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
   private static final String TAG = "Response";
   Button loadApi;
   Button postReq;
+  private String result = "";
   
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -68,14 +69,26 @@ public class MainActivity extends AppCompatActivity {
       }
     });
     
+    try {
+      getHttpResponse();
+      Log.w(TAG, result);
+    } catch (IOException e) {
+      e.printStackTrace();
+      Log.w(TAG, result);
+    }
+    
   }
   
   public void getHttpResponse() throws IOException {
+  
+
+    
+    
+    
     
     String url = "https://reqres.in/api/users";
-    
     OkHttpClient client = new OkHttpClient();
-    
+     String[] localResult = {""};
     Request request = new Request.Builder()
       .url(url)
       .header("Accept", "application/json")
@@ -98,9 +111,13 @@ public class MainActivity extends AppCompatActivity {
       public void onResponse(Call call, Response response) throws IOException {
         
         String mMessage = response.body().string();
-        Log.e(TAG, mMessage);
+        //        Log.e(TAG, mMessage);
+        result = mMessage;
+        
       }
     });
+    
+
   }
   
   public void postRequest() throws IOException {
@@ -133,7 +150,7 @@ public class MainActivity extends AppCompatActivity {
       public void onFailure(Call call, IOException e) {
         
         String mMessage = e.getMessage().toString();
-        Log.w("failure Response", mMessage);
+        Log.e("failure Response", mMessage);
         //call.cancel();
       }
       
@@ -142,12 +159,11 @@ public class MainActivity extends AppCompatActivity {
         
         String mMessage = response.body().string();
         Log.e(TAG, mMessage);
+        
       }
     });
   }
   
-  
-
   
   @Override
   public boolean onCreateOptionsMenu(Menu menu) {

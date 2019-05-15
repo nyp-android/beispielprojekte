@@ -8,7 +8,7 @@ import android.app.FragmentTransaction;
 public class FragmentUtils {
 
 
-  public static synchronized void loadFragment(Activity app, Fragment fragmentToShow) {
+  static synchronized void loadFragment(Activity app, Fragment fragmentToShow) {
 
     FragmentManager manager = app.getFragmentManager();
     FragmentTransaction transaction = manager.beginTransaction();
@@ -16,7 +16,8 @@ public class FragmentUtils {
     transaction.commit();
   }
 
-  public static synchronized void switchFragments(Activity app, Fragment fragmentToShow, Fragment fragmentToHide) {
+  public static synchronized void switchFragments(Activity app, Fragment fragmentToShow,
+      Fragment fragmentToHide) {
     FragmentManager manager = app.getFragmentManager();
     FragmentTransaction transaction = manager.beginTransaction();
     transaction.hide(fragmentToHide);
