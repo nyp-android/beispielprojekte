@@ -47,34 +47,41 @@ import okhttp3.OkHttpClient;
 
 
 /**
- * A simple {@link Fragment} subclass. Activities that contain this fragment must implement the {@link
- * MainLaunchFragment.OnFragmentInteractionListener} interface to handle interaction events. Use the {@link
- * MainLaunchFragment#newInstance} factory method to create an instance of this fragment.
+ * A simple {@link Fragment} subclass. Activities that contain this fragment must implement the
+ * {@link MainLaunchFragment.OnFragmentInteractionListener} interface to handle interaction events.
+ * Use the {@link MainLaunchFragment#newInstance} factory method to create an instance of this
+ * fragment.
  */
 public class MainLaunchFragment extends Fragment {
 
-  @BindView(R.id.progressBar) ProgressBar progressBar;
-  @BindView(R.id.button_Classify) Button button_Classify;
-  @BindView(R.id.button_OpenCamera) Button button_OpenCamera;
-  @BindView(R.id.textView_MainHeader) TextView textView_MainHeader;
-  @BindView(R.id.textView_SubHeader) TextView textView_SubHeader;
-
   static final int REQUEST_IMAGE_CAPTURE = 1;
-  @BindView(R.id.imageView) ImageView imageView;
-  static ClarifaiClient clarifaiClient;
   static final int REQUEST_TAKE_PHOTO = 1;
-  private File photoFile;
-  @NonNull static MainLaunchFragment mainLaunchFragment;
-
+  static ClarifaiClient clarifaiClient;
+  @NonNull
+  static MainLaunchFragment mainLaunchFragment;
   static List<ClarifaiOutput<Concept>> predictions;
-
-
+  @BindView(R.id.progressBar)
+  ProgressBar progressBar;
+  @BindView(R.id.button_Classify)
+  Button button_Classify;
+  @BindView(R.id.button_OpenCamera)
+  Button button_OpenCamera;
+  @BindView(R.id.textView_MainHeader)
+  TextView textView_MainHeader;
+  @BindView(R.id.textView_SubHeader)
+  TextView textView_SubHeader;
+  @BindView(R.id.imageView)
+  ImageView imageView;
+  String mCurrentPhotoPath;
+  private File photoFile;
   private OnFragmentInteractionListener mListener;
 
-  public MainLaunchFragment() { }
+  public MainLaunchFragment() {
+  }
 
   /**
-   * Use this factory method to create a new instance of this fragment using the provided parameters.
+   * Use this factory method to create a new instance of this fragment using the provided
+   * parameters.
    *
    * @return A new instance of fragment MainLaunchFragment.
    */
@@ -82,6 +89,14 @@ public class MainLaunchFragment extends Fragment {
   public static MainLaunchFragment newInstance() {
     mainLaunchFragment = new MainLaunchFragment();
     return mainLaunchFragment;
+  }
+
+  public static synchronized ClarifaiClient getClarifaiClient() {
+    return clarifaiClient;
+  }
+
+  public static synchronized List<ClarifaiOutput<Concept>> getPredictions() {
+    return predictions;
   }
 
   @Override
@@ -98,8 +113,10 @@ public class MainLaunchFragment extends Fragment {
 
     StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
     StrictMode.setThreadPolicy(policy);
-    textView_MainHeader.setTextColor(getResources().getColor(R.color.primaryFontOnPrimaryBackground));
-    textView_SubHeader.setTextColor(getResources().getColor(R.color.primaryFontOnPrimaryBackground));
+    textView_MainHeader
+        .setTextColor(getResources().getColor(R.color.primaryFontOnPrimaryBackground));
+    textView_SubHeader
+        .setTextColor(getResources().getColor(R.color.primaryFontOnPrimaryBackground));
     progressBar.setVisibility(View.INVISIBLE);
     button_Classify.setEnabled(true);
     button_OpenCamera.setEnabled(true);
@@ -120,7 +137,8 @@ public class MainLaunchFragment extends Fragment {
     if (context instanceof OnFragmentInteractionListener) {
       mListener = (OnFragmentInteractionListener) context;
     } else {
-      throw new RuntimeException(context.toString() + " must implement OnFragmentInteractionListener");
+      throw new RuntimeException(
+          context.toString() + " must implement OnFragmentInteractionListener");
     }
   }
 
@@ -128,18 +146,6 @@ public class MainLaunchFragment extends Fragment {
   public void onDetach() {
     super.onDetach();
     mListener = null;
-  }
-
-  /**
-   * This interface must be implemented by activities that contain this fragment to allow an interaction in this
-   * fragment to be communicated to the activity and potentially other fragments contained in that activity. <p> See the
-   * Android Training lesson <a href= "http://developer.android.com/training/basics/fragments/communicating.html"
-   * >Communicating with Other Fragments</a> for more information.
-   */
-  public interface OnFragmentInteractionListener {
-
-    // TODO: Update argument type and name
-    void onFragmentInteraction(Uri uri);
   }
 
   @RequiresApi(api = VERSION_CODES.M)
@@ -160,7 +166,8 @@ public class MainLaunchFragment extends Fragment {
       // Continue only if the File was successfully created
       if (photoFile != null) {
         Uri photoURI =
-            FileProvider.getUriForFile(getContext(), "dev.dle.apicallexample.fileprovider", photoFile);
+            FileProvider
+                .getUriForFile(getContext(), "dev.dle.apicallexample.fileprovider", photoFile);
         takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI);
         startActivityForResult(takePictureIntent, REQUEST_TAKE_PHOTO);
       }
@@ -212,7 +219,8 @@ public class MainLaunchFragment extends Fragment {
         protected void onPostExecute(ClarifaiResponse<List<ClarifaiOutput<Concept>>> response) {
           if (!response.isSuccessful()) {
             Toast
-                .makeText(getContext(), getResources().getText(R.string.error_while_contacting_api), Toast.LENGTH_SHORT)
+                .makeText(getContext(), getResources().getText(R.string.error_while_contacting_api),
+                    Toast.LENGTH_SHORT)
                 .show();
 
             return;
@@ -229,14 +237,12 @@ public class MainLaunchFragment extends Fragment {
 
         @RequiresApi(api = VERSION_CODES.M)
         private void showErrorSnackbar(@StringRes int errorString) {
-          Toast.makeText(getContext(), getResources().getText(errorString), Toast.LENGTH_SHORT).show();
+          Toast.makeText(getContext(), getResources().getText(errorString), Toast.LENGTH_SHORT)
+              .show();
         }
       }.execute();
     }
   }
-
-
-  String mCurrentPhotoPath;
 
   @RequiresApi(api = VERSION_CODES.M)
   private File createImageFile() throws IOException {
@@ -254,12 +260,17 @@ public class MainLaunchFragment extends Fragment {
     return image;
   }
 
-  public static synchronized ClarifaiClient getClarifaiClient() {
-    return clarifaiClient;
-  }
+  /**
+   * This interface must be implemented by activities that contain this fragment to allow an
+   * interaction in this fragment to be communicated to the activity and potentially other fragments
+   * contained in that activity. <p> See the Android Training lesson <a href=
+   * "http://developer.android.com/training/basics/fragments/communicating.html" >Communicating with
+   * Other Fragments</a> for more information.
+   */
+  public interface OnFragmentInteractionListener {
 
-  public static synchronized List<ClarifaiOutput<Concept>> getPredictions() {
-    return predictions;
+    // TODO: Update argument type and name
+    void onFragmentInteraction(Uri uri);
   }
 
 
