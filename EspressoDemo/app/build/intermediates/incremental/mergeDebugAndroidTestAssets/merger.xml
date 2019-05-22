@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config="main"><source path="/home/dle/DevWork/Playground/android-fundamentals-apps-v2/TwoActivitiesEspresso/app/src/androidTest/assets"/><source path="/home/dle/DevWork/Playground/android-fundamentals-apps-v2/TwoActivitiesEspresso/app/build/generated/assets/shaders/androidTest/debug"/></dataSet><dataSet config="debug"><source path="/home/dle/DevWork/Playground/android-fundamentals-apps-v2/TwoActivitiesEspresso/app/src/androidTestDebug/assets"/></dataSet></merger>

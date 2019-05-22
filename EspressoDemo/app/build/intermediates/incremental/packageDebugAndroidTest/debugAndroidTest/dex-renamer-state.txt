@@ -1,0 +1,4 @@
+#Wed May 22 06:57:37 CEST 2019
+base.0=/home/dle/DevWork/Playground/android-fundamentals-apps-v2/TwoActivitiesEspresso/app/build/intermediates/transforms/dexMerger/androidTest/debug/0
+path.0=classes.dex
+renamed.0=classes.dex
